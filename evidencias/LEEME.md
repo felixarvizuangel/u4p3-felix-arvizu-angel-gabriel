@@ -23,3 +23,4 @@ Toma cada captura en el momento en que aparece el resultado: **Win + Shift + S**
 
 <!-- Regla de privacidad -->
 Ninguna captura debe mostrar tu `.env` ni tus contraseñas de Aiven.
+(Get-Clipboard -Format Image).Save("$PWD\evidencias\NOMBRE.png")
