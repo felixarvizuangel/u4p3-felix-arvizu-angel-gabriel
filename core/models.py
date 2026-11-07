@@ -47,7 +47,7 @@ class Servicio(models.Model):
     # on_delete=PROTECT: MySQL no deja borrar una categoría si todavía tiene servicios
     # null=True: los servicios que ya existen quedan vacíos hasta que el paso 03 les copie su categoría
     # related_name='servicios': desde una categoría se llega a sus servicios con categoria.servicios
-    categoria_ref = models.ForeignKey(Categoria, on_delete=models.PROTECT, null=True, related_name='servicios')
+    categoria = models.ForeignKey(Categoria, on_delete=models.PROTECT, null=True, related_name='servicios')
 
     # creado_en: fecha y hora de creación automática; no cambia
     creado_en = models.DateTimeField(auto_now_add=True)
