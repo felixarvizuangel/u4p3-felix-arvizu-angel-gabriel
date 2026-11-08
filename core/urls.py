@@ -15,6 +15,24 @@ urlpatterns = [
     path('servicios/<int:pk>/editar/', views.editar_servicio, name='editar_servicio'),
     # /servicios/<id>/eliminar/: eliminar con confirmación (Semana 5)
     path('servicios/<int:pk>/eliminar/', views.eliminar_servicio, name='eliminar_servicio'),
+
+    # NUEVA: lista y alta de categorías
+    path('categorias/', views.categorias, name='categorias'),
+    # NUEVA: editar una categoría
+    path('categorias/<int:pk>/editar/', views.editar_categoria, name='editar_categoria'),
+    # NUEVA: eliminar una categoría (solo POST)
+    path('categorias/<int:pk>/eliminar/', views.eliminar_categoria, name='eliminar_categoria'),
+    # NUEVA: lista de facturas
+    path('facturas/', views.facturas, name='facturas'),
+    # NUEVA: crear factura con sus renglones
+    path('facturas/nueva/', views.crear_factura, name='crear_factura'),
+    # NUEVA: detalle de una factura
+    path('facturas/<int:pk>/', views.detalle_factura, name='detalle_factura'),
+    # NUEVA: lista de reportes SQLs
+    path('reportes/', views.reportes, name='reportes'),
+    # NUEVA: un reporte; <slug:clave> acepta letras, números y guiones (ej. ingresos-por-categoria)
+    path('reportes/<slug:clave>/', views.reporte, name='reporte'),
+
     # /registro/: NUEVA, pantalla de alta de cuenta
     path('registro/', views.registro, name='registro'),
     # /login/: NUEVA, pantalla de inicio de sesión propia (reemplaza al login prestado de /admin)
